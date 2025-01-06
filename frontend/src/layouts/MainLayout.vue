@@ -187,7 +187,7 @@
             :key="item.title"
             v-bind="item"
           />
-          <div v-if="userProfile === 'admin'">
+          <div v-if="userProfile === 'admin'" class="no-rounded">
             <q-separator spaced />
             <div class="q-mb-lg"></div>
             <template v-for="item in menuDataAdmin">
@@ -584,5 +584,8 @@ export default {
 <style scoped>
 .q-img__image {
   background-size: contain;
+}
+.no-rounded{
+border-radius: 5px !important
 }
 </style>

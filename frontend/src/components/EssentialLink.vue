@@ -5,7 +5,7 @@
     :active="routeName == cRouterName"
     active-class="bg-blue-1 text-grey-8 text-bold menu-link-active-item-top"
     @click=" () => !(routeName == cRouterName) ? $router.push({ name: routeName }) : ''"
-    class="houverList"
+    class="houverList no-rounded"
     :class="{'text-negative text-bolder': color === 'negative'}"
   >
     <q-item-section
@@ -66,11 +66,17 @@ export default {
 </script>
 <style lang="sass">
 .menu-link-active-item-top
-  border-left: 3px solid rgb(21, 120, 173)
-  border-right: 3px solid rgb(21, 120, 173)
-  // border-radius: 20px
-  border-top-right-radius: 20px
-  border-bottom-right-radius: 20px
+  border-left: 2px solid #1171CC
+  border-right: 2px solid #1171CC
+  border-radius: 5px !important
   position: relative
   height: 100%
+
+  .no-rounded
+  border-radius: 5px !important
+  &.q-item--active
+    border-radius: 5px !important
+  &:hover
+    border-radius: 5px !important
+
 </style>

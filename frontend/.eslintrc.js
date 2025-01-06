@@ -65,7 +65,11 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     'prefer-promise-reject-errors': 'off',
-    "no-use-v-if-with-v-for": 0,
+    "no-use-v-if-with-v-for": 'off',
+    'quotes': 'off', // Aceita aspas simples ou duplas
+    'semi': 'off', // Permite ponto-e-vírgula extra
+    'space-before-function-paren': 'off', // Ignora espaço antes de parênteses em funções
+    'comma-dangle': 'off',
     "vue/no-use-v-if-with-v-for": [
       "error",
       {

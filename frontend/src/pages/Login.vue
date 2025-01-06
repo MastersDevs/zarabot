@@ -2,40 +2,44 @@
   <q-layout class="vertical-center">
     <q-page-container>
       <q-page class="flex justify-center items-center">
-        <q-ajax-bar
+        <!-- <q-ajax-bar
           position="top"
           color="primary"
-          size="5px"
-        />
+          size="3px"
+        /> -->
         <q-card
           bordered
           class="card q-pa-md shadow-10"
-          style="border-top: 5px solid #3E72AF; background-color: rgba(255,255,255,0.75); border-radius: 20px"
+          style="
+            border-top: 5px solid #1171CC;
+            background-color: rgba(255, 255, 255);
+            border-radius: 20px;
+          "
         >
           <q-card-section class="text-primary text-center">
             <q-img
-              src="/izing-logo_5_transparent.png"
+              src="../assets/img/logoZaraBot.png"
               spinner-color="white"
-              style="height: 120px; max-width: 300px"
+              style="height: 120px; max-width: 350px"
               class="q-mb-lg q-px-md"
             />
             <q-separator spaced />
           </q-card-section>
-          <q-card-section class="text-primary">
+          <q-card-section class="text-primary text-center">
             <div class="text-h6">Bem vindo!</div>
-            <div class="text-caption text-grey">Faça login...</div>
+            <div class="text-caption text-grey">
+              Entre e-mail e senha abaixo
+            </div>
           </q-card-section>
-
           <q-card-section>
             <q-input
-              class="q-mb-md"
+              class="q-mb-md custom-input"
               clearable
-              rounded
               v-model="form.email"
-              placeholder="meu@email.com"
+              placeholder="seuemail@email.com"
               @blur="$v.form.email.$touch"
               :error="$v.form.email.$error"
-              error-message="Deve ser um e-mail válido."
+              error-message="Insira um e-mail válido."
               outlined
               @keypress.enter="fazerLogin"
             >
@@ -43,14 +47,14 @@
                 <q-icon
                   name="mdi-email-outline"
                   class="cursor-pointer"
-                  color='primary'
+                  color="primary"
                 />
               </template>
             </q-input>
 
             <q-input
+              class="custom-input"
               outlined
-              rounded
               v-model="form.password"
               :type="isPwd ? 'password' : 'text'"
               @keypress.enter="fazerLogin"
@@ -59,7 +63,7 @@
                 <q-icon
                   name="mdi-shield-key-outline"
                   class="cursor-pointer"
-                  color='primary'
+                  color="primary"
                 />
               </template>
               <template v-slot:append>
@@ -71,95 +75,105 @@
               </template>
             </q-input>
           </q-card-section>
-          <q-card-actions>
-            <q-space />
+          <q-card-actions class="flex justify-center">
             <q-btn
-              class="q-mr-sm q-my-lg"
+              class="q-mr-sm q-my-lg custom-input"
               style="width: 150px"
               color="primary"
-              rounded
               :loading="loading"
               @click="fazerLogin"
             >
-              Login
+              Entrar
               <span slot="loading">
-                <q-spinner-puff class="on-left" />Logando...
+                <q-spinner-puff class="on-left" />Entrando...
               </span>
             </q-btn>
           </q-card-actions>
-          <!-- <q-btn
+          <q-card-actions class="flex justify-center">
+<q-btn
+            color="red"
             flat
-            color="info"
             no-caps
             dense
-            class="q-px-sm"
+            class="q-px-sm custom-input"
             label="Esqueci a senha"
-            @click="modalEsqueciSenha=true"
-          /> -->
+            @click="modalEsqueciSenha = true"
+          >
+          </q-btn>
+          </q-card-actions>
 
           <q-inner-loading :showing="loading" />
         </q-card>
       </q-page>
-
     </q-page-container>
+    <div class="video-container">
+      <video
+        autoplay
+        muted
+        loop
+        style="width: 100%; height: auto; object-fit: cover"
+      >
+        <source src="../assets/110694.mp4" type="video/mp4" />
+      </video>
+    </div>
   </q-layout>
 </template>
 
 <script>
-import { required, email } from 'vuelidate/lib/validators'
+import { required, email } from "vuelidate/lib/validators";
 
 export default {
-  name: 'Login',
-  data () {
+  name: "Login",
+  data() {
     return {
       modalEsqueciSenha: false,
       emailRedefinicao: null,
       form: {
         email: null,
-        password: null
+        password: null,
       },
       contasCliente: {},
       isPwd: true,
-      loading: false
-    }
+      loading: false,
+    };
   },
   validations: {
     form: {
       email: { required, email },
-      password: { required }
+      password: { required },
     },
-    emailRedefinicao: { required, email }
+    emailRedefinicao: { required, email },
   },
   methods: {
-    fazerLogin () {
-      this.$v.form.$touch()
+    fazerLogin() {
+      this.$v.form.$touch();
       if (this.$v.form.$error) {
-        this.$q.notify('Informe usuário e senha corretamente.')
-        return
+        this.$q.notify("Informe usuário e senha corretamente.");
+        return;
       }
-      this.loading = true
-      this.$store.dispatch('UserLogin', this.form)
-        .then(data => {
+      this.loading = true;
+      this.$store
+        .dispatch("UserLogin", this.form)
+        .then((data) => {
           // if (Object.keys(this.contasCliente).length == 1) {
           //   // logar direto
           // }
-          this.loading = false
+          this.loading = false;
           // .params = { modalEscolhaUnidadeNegocio: true }
         })
-        .catch(err => {
-          console.error('exStore', err)
-          this.loading = false
-        })
+        .catch((err) => {
+          console.error("exStore", err);
+          this.loading = false;
+        });
     },
-    clear () {
-      this.form.email = ''
-      this.form.password = ''
-      this.$v.form.$reset()
-    }
+    clear() {
+      this.form.email = "";
+      this.form.password = "";
+      this.$v.form.$reset();
+    },
   },
-  mounted () {
-  }
-}
+  mounted() {},
+};
 </script>
 <style scoped>
 #login-app {
@@ -223,5 +237,24 @@ export default {
 .q-img__image {
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.q-page {
+  position: relative;
+  z-index: 2;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.custom-input {
+  border-radius: 8px !important;
 }
 </style>

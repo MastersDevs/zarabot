@@ -1,17 +1,323 @@
 <template>
   <div class="q-pa-sm">
+    <q-card class="q-my-md q-pa-sm">
+      <q-card-section class="q-pa-md">
+        <!-- <div class="row q-gutter-md justify-center">
+          <div class="col-xs-12 col-sm-shrink">
+            <q-card
+              flat
+              bordered
+              class="my-card full-height"
+              style="min-width: 200px"
+            >
+              <q-card-section class="text-center">
+                <p class="text-h4 text-bold text-center">
+                  {{ ticketsAndTimes.qtd_total_atendimentos }}
+                </p>
+                Total Atendimentos
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-xs-12 col-sm-shrink">
+            <q-card
+              flat
+              bordered
+              class="my-card full-height"
+              style="min-width: 200px"
+            >
+              <q-card-section class="text-center">
+                <p class="text-h4 text-bold text-center">
+                  {{ ticketsAndTimes.qtd_demanda_ativa }}
+                </p>
+                Ativo
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-xs-12 col-sm-shrink">
+            <q-card
+              flat
+              bordered
+              class="my-card full-height"
+              style="min-width: 200px"
+            >
+              <q-card-section class="text-center">
+                <p class="text-h4 text-bold text-center">
+                  {{ ticketsAndTimes.qtd_demanda_receptiva }}
+                </p>
+                Receptivo
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+            <q-card flat bordered class="my-card full-height">
+              <q-card-section class="text-center">
+                <p class="text-h5 text-bold text-center">{{ cTmaFormat }}</p>
+                Tempo Médio Atendimento (TMA)
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+            <q-card flat bordered class="my-card full-height">
+              <q-card-section class="text-center">
+                <p class="text-h5 text-bold text-center">{{ cTmeFormat }}</p>
+                Tempo Médio 1º Resposta
+              </q-card-section>
+            </q-card>
+          </div>
+        </div> -->
+        <div class="row q-col-gutter-lg">
+          <div
+            class="col-lg-4 col-md-4 col-sm-12 col-xs-12"
+            style="height: 190px"
+          >
+            <div class="q-card q-card--bordered no-shadow card_style">
+              <div class="q-card__section q-card__section--vert q-pa-none">
+                <div class="q-pa-lg">
+                  <div class="title font-weight-medium text-h5">
+                    Seja Bem-vindo, Zara! 🎉
+                  </div>
+                  <p class="subtitle q-mb-xs">zaramelloc@gmail.com</p>
+                  <div class="text-h6 font-weight-medium text-primary q-mb-md">
+                    Administrador
+                  </div>
+                  <button
+                    data-v-e1a7f46a=""
+                    class="q-btn q-btn-item non-selectable no-outline q-btn--standard q-btn--rectangle bg-primary text-white q-btn--actionable q-focusable q-hoverable q-btn--no-uppercase"
+                    tabindex="0"
+                    type="button"
+                    style="padding: 4px 24px; min-width: 0px; min-height: 0px"
+                  >
+                    <span class="q-focus-helper"></span
+                    ><span
+                      class="q-btn__content text-center col items-center q-anchor--skip justify-center row"
+                      >Seu perfil</span
+                    >
+                  </button>
+                </div>
+                <div class="img_style">
+                  <img
+                    src="../../assets/img/congo-illustration-ytLxXgIo.png"
+                    alt="John's Avatar"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="q-card q-card--bordered no-shadow card_style fit">
+              <div
+                class="q-card__section q-card__section--vert q-px-lg q-pt-lg"
+              >
+                <div class="title font-weight-medium text-h4">
+                  Painel de Controle
+                  <span class="float-right subtitle q-mb-xs text-grey-6">
+                    Total de atendimentos: {{ ticketsAndTimes.qtd_total_atendimentos }}</span
+                  >
+                </div>
+              </div>
+              <div class="q-card__section q-card__section--vert">
+                <div class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="q-item q-item-type row no-wrap" role="listitem">
+                      <div
+                        class="q-item__section column q-item__section--side justify-center"
+                      >
+                        <div
+                          class="q-avatar"
+                          round=""
+                          style="background-color: rgb(232, 231, 253); width: 60px; height: 60px;"
+                        >
+                          <div
+                            class="q-avatar__content row flex-center overflow-hidden"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              width="36"
+                              height="36"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2c-8.072 -.49 -14.51 -6.928 -15 -15a2 2 0 0 1 2 -2"
+                              ></path>
+                              <path d="M15 5h6"></path>
+                              <path d="M18.5 7.5l2.5 -2.5l-2.5 -2.5"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="q-item__section column q-item__section--main justify-center"
+                      >
+                        <div class="q-item__label list_title" style="font-size: 18px; font-weight: bold;">{{ ticketsAndTimes.qtd_demanda_ativa }}</div>
+                        <div
+                          class="q-item__label q-item__label--caption text-caption" style="font-size: 15px;"
+                        >
+                          Atendimentos abertos
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="q-item q-item-type row no-wrap" role="listitem">
+                      <div
+                        class="q-item__section column q-item__section--side justify-center"
+                      >
+                        <div
+                          class="q-avatar"
+                          round=""
+                          style="background-color: rgb(225, 248, 252); width: 60px; height: 60px;"
+                        >
+                          <div
+                            class="q-avatar__content row flex-center overflow-hidden"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="36"
+                              height="36"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2c-8.072 -.49 -14.51 -6.928 -15 -15a2 2 0 0 1 2 -2"
+                              />
+                              <path d="M15 5l2 2l4 -4" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="q-item__section column q-item__section--main justify-center"
+                      >
+                        <div class="q-item__label list_title" style="font-size: 18px; font-weight: bold;">*****</div>
+                        <div
+                          class="q-item__label q-item__label--caption text-caption" style="font-size: 15px;"
+                        >
+                          Atendimentos fechados
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="q-item q-item-type row no-wrap" role="listitem">
+                      <div
+                        class="q-item__section column q-item__section--side justify-center"
+                      >
+                        <div
+                          class="q-avatar"
+                          round=""
+                          style="background-color: rgb(253, 228, 227); width: 60px; height: 60px;"
+                        >
+                          <div
+                            class="q-avatar__content row flex-center overflow-hidden"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              width="36"
+                              height="36"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M20.975 11.33a9 9 0 1 0 -5.717 9.06"
+                              ></path>
+                              <path d="M12 7v5l2 2"></path>
+                              <path d="M19 22v.01"></path>
+                              <path
+                                d="M19 19a2.003 2.003 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="q-item__section column q-item__section--main justify-center"
+                      >
+                        <div class="q-item__label list_title" style="font-size: 18px; font-weight: bold;">{{ cTmaFormat }}</div>
+                        <div
+                          class="q-item__label q-item__label--caption text-caption" style="font-size: 15px;"
+                        >
+                          Tempo de atendimento
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="q-item q-item-type row no-wrap" role="listitem">
+                      <div
+                        class="q-item__section column q-item__section--side justify-center"
+                      >
+                        <div
+                          class="q-avatar"
+                          round=""
+                          style="background-color: rgb(225, 246, 232); width: 60px; height: 60px;"
+                        >
+                          <div
+                            class="q-avatar__content row flex-center overflow-hidden"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              width="36"
+                              height="36"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M20.943 13.016a9 9 0 1 0 -8.915 7.984"
+                              ></path>
+                              <path d="M16 22l5 -5"></path>
+                              <path d="M21 21.5v-4.5h-4.5"></path>
+                              <path d="M12 7v5l2 2"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="q-item__section column q-item__section--main justify-center"
+                      >
+                        <div class="q-item__label list_title" style="font-size: 18px; font-weight: bold;">{{ cTmeFormat }}</div>
+                        <div
+                          class="q-item__label q-item__label--caption text-caption" style="font-size: 15px;"
+                        >
+                          Tempo de resposta
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </q-card-section>
+    </q-card>
     <q-card class="q-my-md">
       <q-card-section class="row justify-between items-center">
         <div class="col-12 justify-center flex q-gutter-sm">
           <q-datetime-picker
             style="width: 200px"
             dense
-            rounded
             hide-bottom-space
             outlined
             stack-label
             bottom-slots
-            label="Data/Hora Agendamento"
+            label="Data Início"
             mode="date"
             color="primary"
             format24h
@@ -20,21 +326,19 @@
           <q-datetime-picker
             style="width: 200px"
             dense
-            rounded
             hide-bottom-space
             outlined
             stack-label
             bottom-slots
-            label="Data/Hora Agendamento"
+            label="Data Fim"
             mode="date"
             color="primary"
             format24h
             v-model="params.endDate"
           />
-          <q-select
+          <!-- <q-select
             style="width: 300px"
             dense
-            rounded
             outlined
             hide-bottom-space
             emit-value
@@ -50,102 +354,12 @@
             option-value="id"
             option-label="queue"
             input-style="width: 280px; max-width: 280px;"
-          />
-          <q-btn
-            rounded
-            color="primary"
-            icon="refresh"
-            label="Atualizar"
-            @click="getDashData"
-          />
+            class="no-rounded"
+          /> -->
+          <q-btn color="primary" icon="search" @click="getDashData" />
         </div>
-
       </q-card-section>
     </q-card>
-    <q-card class="q-my-md q-pa-sm">
-      <q-card-section class="q-pa-md">
-        <div class="row q-gutter-md justify-center">
-          <div class="col-xs-12 col-sm-shrink">
-            <q-card
-              flat
-              bordered
-              class="my-card full-height"
-              style="min-width: 200px"
-            >
-              <q-card-section class="text-center ">
-                <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_total_atendimentos }} </p>
-                Total Atendimentos
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-shrink">
-            <q-card
-              flat
-              bordered
-              class="my-card full-height"
-              style="min-width: 200px"
-            >
-              <q-card-section class="text-center">
-                <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_demanda_ativa }} </p>
-                Ativo
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-shrink">
-            <q-card
-              flat
-              bordered
-              class="my-card full-height"
-              style="min-width: 200px"
-            >
-              <q-card-section class="text-center">
-                <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_demanda_receptiva }} </p>
-                Receptivo
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-shrink">
-            <q-card
-              flat
-              bordered
-              class="my-card full-height"
-              style="min-width: 200px"
-            >
-              <q-card-section class="text-center">
-                <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.new_contacts }} </p>
-                Novos Contatos
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-            <q-card
-              flat
-              bordered
-              class="my-card full-height"
-            >
-              <q-card-section class="text-center">
-                <p class="text-h5 text-bold text-center"> {{ cTmaFormat }} </p>
-                Tempo Médio Atendimento (TMA)
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-            <q-card
-              flat
-              bordered
-              class="my-card full-height"
-            >
-              <q-card-section class="text-center">
-                <p class="text-h5 text-bold text-center"> {{ cTmeFormat }} </p>
-                Tempo Médio 1º Resposta
-              </q-card-section>
-            </q-card>
-          </div>
-        </div>
-
-      </q-card-section>
-    </q-card>
-
     <div class="row q-col-gutter-md">
       <div class="col-xs-12 col-sm-6">
         <q-card>
@@ -837,5 +1051,15 @@ export default {
 <style lang="scss" >
 .apexcharts-theme-dark svg {
   background: none !important;
+}
+
+.no-rounded .q-menu {
+  border-radius: 5px !important;
+}
+
+.img_style {
+  position: absolute;
+  right: 10px;
+  bottom: -7px;
 }
 </style>
